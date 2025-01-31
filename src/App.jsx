@@ -1,13 +1,22 @@
-import { useState } from 'react'
+import { useState } from 'react';
+import TaskInput from './components/TaskInput';
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  const [tasks, setTasks]= useState([]);
+
+  const handleAddTask = (input) =>{
+      setTasks([...tasks,input]);
+  }
 
   return (
    <div>
-    <h1>To-do list</h1>
+      <TaskInput onAddTask={handleAddTask}/>
+      {tasks.map((task)=>{
+        return <li>{task}</li>
+      })}
    </div>
   )
 }
 
-export default App
+export default App;
