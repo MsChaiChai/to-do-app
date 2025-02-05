@@ -1,10 +1,14 @@
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 import TaskInput from './components/TaskInput';
 import TaskList from './components/TaskList';
 
 function App() {
 
-  const [tasks, setTasks]= useState([]);
+  const [tasks, setTasks]= useState(JSON.parse(localStorage.getItem("tasks"))||[]);
+
+  useEffect(()=>{
+    localStorage.setItem("tasks",JSON.stringify(tasks));
+  },[tasks])
 
   const handleAddTask = (input) =>{
     if(input.trim()===""){
@@ -16,7 +20,7 @@ function App() {
         text:input,
         completed: false
       }
-      setTasks([...tasks,newTask]);
+      setTasks(prevTasks=>[...prevTasks,newTask]);
   }
 
   const onToggleTask=(taskId)=>{
