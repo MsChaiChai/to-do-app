@@ -1,0 +1,48 @@
+
+.taskInput{
+    display:flex;
+    flex-direction: column;
+}
+
+input:focus, input{
+
+    /* Removes weird blue stroke thingy while typing */
+    outline:none;
+
+    font-size: 30px;
+    color: var(--text);
+}
+    
+    
+input::placeholder, h2{
+     font-size: 30px;
+     color: var(--placeholderText);
+}
+
+
+.inputField{
+    margin-top:64px;
+    box-sizing: border-box;
+    width: 667px;
+    padding: 16px;
+    background: var(--itemBackgroundColor2);
+    flex:1;
+}
+
+button, .inputField{
+    height: 74px;
+    border: 5px solid var(--border);
+    border-radius: 10px;
+    font-size: 30px;
+    color: var(--text);
+}
+
+button{
+    background-color: var(--itemBackgroundColor);
+    padding-left: 16px;
+    padding-right: 16px;
+    margin-top: 16px;
+    margin-bottom: 64px;
+}
+
+

@@ -1,6 +1,7 @@
 import { useState,useEffect } from 'react';
 import TaskInput from './components/TaskInput';
 import TaskList from './components/TaskList';
+import "./styles/style.css";
 
 function App() {
 
@@ -32,9 +33,9 @@ function App() {
   }
 
   return (
-   <div>
+   <div className="container">
       <TaskInput onAddTask={handleAddTask}/>
-      <TaskList tasks={tasks} onToggleTask={onToggleTask} onDeleteTask={onDeleteTask}/>
+      <TaskList tasks={tasks} onToggleTask={onToggleTask} onDeleteTask={onDeleteTask} />
    </div>
   )
 }

@@ -1,0 +1,81 @@
+
+.taskItem,.taskItemCompleted{
+    display:flex;
+    background-color:var(--itemBackgroundColor);
+    padding-left: 16px;
+    padding-right: 16px;
+    margin-bottom: 8px;
+    min-height: 74px;
+    border: 5px solid var(--border);
+    border-radius: 10px;
+    font-size: 30px;
+    color: var(--text);
+    justify-content: space-between;
+    align-items: center;
+}
+
+.taskItemCompleted{
+    color: #724b43;
+    background-color:#9b7067;
+}
+
+p {
+    flex-grow: 1;
+    padding: 8px;
+    margin:0;
+    word-break: break-word;
+    white-space: normal;
+}
+
+.customCheckbox{
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    border: 5px solid var(--border);
+    border-radius: 10px;
+    background: var(--itemBackgroundColor2);
+    appearance: none;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.line-through{
+    text-decoration: line-through;
+}
+
+
+
+.customCheckbox:checked{
+    background-color: #946459;
+}
+
+/* X za delete */
+#deleteBtn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;  
+    align-items: center;     
+    width: 30px; 
+    height: 30px; 
+    position: relative;  
+    margin-bottom:0px;
+    margin-top:0px;
+}
+
+#deleteBtn .line {
+    position: absolute;
+    width: 20px;
+    height: 5px;
+    background-color: var(--border);
+    transition: transform 0.2s;
+}
+
+#deleteBtn .line1 {
+    transform: rotate(45deg);
+}
+
+#deleteBtn .line2 {
+    transform: rotate(-45deg);
+}

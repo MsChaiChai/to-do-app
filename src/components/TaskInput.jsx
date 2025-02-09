@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-
+import '../styles/TaskInput.css';
 
 function TaskInput({onAddTask}){
 
@@ -15,8 +15,8 @@ function TaskInput({onAddTask}){
     }
     
     return(
-        <div>
-            <input value={input} onChange={handleInputChange} placeholder='Add a task'></input>
+        <div className="taskInput">
+            <input value={input} onChange={handleInputChange} placeholder='Add a task' className="inputField"></input>
             <button onClick={handleAddClick}>Add</button>
         </div>
     );
